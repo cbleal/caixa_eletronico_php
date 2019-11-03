@@ -106,15 +106,16 @@ $contas = new Contas();
 										<td><?php echo $account['titular']; ?></td>
 										<td><?php echo $account['agencia']; ?></td>
 										<td><?php echo $account['conta']; ?></td>
-										<td><?php echo $account['saldo']; ?></td>
+										<td><?php echo number_format($account['saldo'], 2, ',', '.'); ?></td>
 
 										<!-- Formulario para Transação -->
 										<td>
 
-						<form method="POST" action="">
+						<form method="POST" action="view/add_transacao.php">
 
+                            <!-- Enviar o ID -->
+                            <input type="hidden" name="id" value="<?=$account['id'];?>">
 							<!-- Botão para Transação -->
-
 							<button class="btn btn-warning btn-xs">
 								<i class="fa fa-dollar-sign"></i>
 							</button>
